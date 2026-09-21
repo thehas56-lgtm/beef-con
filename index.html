@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BEEF CON 2027</title>
+
+    <style>
+        :root {
+            --beef-red: #a94f38;
+            --dark-red: #743323;
+            --cream: #e2c39b;
+            --dark-brown: #3b1f10;
+            --black-brown: #21130b;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--dark-brown);
+            color: var(--cream);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* HEADER */
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    var(--beef-red) 0%,
+                    var(--dark-red) 45%,
+                    var(--dark-brown) 100%
+                );
+        }
+
+        .header-content {
+            max-width: 1000px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            font-size: 1.1rem;
+            font-weight: 900;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(4rem, 13vw, 10rem);
+            line-height: 0.8;
+            font-weight: 1000;
+            letter-spacing: -6px;
+            text-transform: uppercase;
+        }
+
+        .year {
+            font-size: clamp(3rem, 7vw, 6rem);
+            font-weight: 1000;
+            margin-top: 10px;
+        }
+
+        .tagline {
+            margin-top: 25px;
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            font-weight: 800;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .beefy {
+            width: min(430px, 75vw);
+            margin-top: 30px;
+            filter: drop-shadow(12px 15px 0 rgba(33, 19, 11, 0.45));
+        }
+
+        .date-box {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 30px;
+            border: 5px solid var(--cream);
+            background: var(--dark-brown);
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--black-brown);
+            border-bottom: 4px solid var(--beef-red);
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin: 0 15px;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: var(--beef-red);
+        }
+
+        /* GENERAL SECTIONS */
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 30px;
+        }
+
+        .section-label {
+            color: var(--beef-red);
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            margin: 0 0 30px;
+            line-height: 0.95;
+            text-transform: uppercase;
+            font-weight: 1000;
+        }
+
+        .intro {
+            max-width: 850px;
+            font-size: 1.25rem;
+            line-height: 1.7;
+        }
+
+        /* STATS */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .stat {
+            background: var(--cream);
+            color: var(--dark-brown);
+            padding: 35px 20px;
+            text-align: center;
+            border: 5px solid var(--dark-brown);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 1000;
+        }
+
+        .stat-label {
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* EVENTS */
+
+        .events {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .event {
+            background: var(--beef-red);
+            padding: 30px;
+            min-height: 180px;
+            border: 5px solid var(--dark-brown);
+        }
+
+        .event h3 {
+            font-size: 1.8rem;
+            margin: 0 0 10px;
+            text-transform: uppercase;
+        }
+
+        .event p {
+            line-height: 1.5;
+        }
+
+        /* COUNCIL */
+
+        .council {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .council-member {
+            border: 4px solid var(--cream);
+            padding: 25px;
+        }
+
+        .council-member h3 {
+            margin: 0 0 8px;
+            font-size: 1.7rem;
+        }
+
+        .title {
+            color: var(--beef-red);
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: var(--black-brown);
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 5px solid var(--beef-red);
+        }
+
+        footer h2 {
+            font-size: 3rem;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+                font-size: 0.8rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <header id="home">
+
+        <div class="header-content">
+
+            <div class="eyebrow">
+                BEEF SQUAD PRESENTS
+            </div>
+
+            <h1>BEEF CON</h1>
+
+            <div class="year">
+                2027
+            </div>
+
+            <div class="tagline">
+                The Annual BEEF Summit
+            </div>
+
+            <img
+                class="beefy"
+                src="beefy.png"
+                alt="Beefy the BEEF Con mascot"
+            >
+
+            <div class="date-box">
+                JANUARY 2027 · DATE TBD
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <a href="#event">The Event</a>
+        <a href="#competition">Competition</a>
+        <a href="#council">BEEF Council</a>
+        <a href="#history">History</a>
+    </nav>
+
+
+    <!-- THE EVENT -->
+
+    <section id="event">
+
+        <div class="section-label">
+            About the Summit
+        </div>
+
+        <h2>What is BEEF Con?</h2>
+
+        <p class="intro">
+            BEEF Con is an annual three-day gathering of BEEF-affiliated
+            competitors, bringing together PC gaming, competition, food,
+            friendship, and an unreasonable amount of organizational
+            infrastructure.
+        </p>
+
+        <p class="intro">
+            Hosted in Camas, Washington, BEEF Con brings together
+            approximately 15–20 invitees for a weekend of competitive
+            gaming, group play, prizes, food, awards, and other
+            officially sanctioned BEEF activities.
+        </p>
+
+        <div class="stats">
+
+            <div class="stat">
+                <div class="stat-number">15–20</div>
+                <div class="stat-label">BEEF Personnel</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Days of BEEF</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">6–8</div>
+                <div class="stat-label">Main Events</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMPETITION -->
+
+    <section id="competition">
+
+        <div class="section-label">
+            Competitive Operations
+        </div>
+
+        <h2>The Competition</h2>
+
+        <p class="intro">
+            BEEF Con features a series of main events spread throughout
+            the three-day summit. Events may consist of individual
+            competition, speed runs, high-score challenges, or
+            team-based tournament play.
+        </p>
+
+        <div class="events">
+
+            <div class="event">
+                <h3>Counter-Strike 2</h3>
+                <p>
+                    A recurring BEEF Con main event featuring multiple
+                    teams competing through a tournament-style circuit.
+                </p>
+            </div>
+
+            <div class="event">
+                <h3>Event #2</h3>
+                <p>
+                    <strong>CLASSIFIED</strong><br>
+                    The BEEF Council has not yet authorized the release
+                    of this information.
+                </p>
+            </div>
+
+            <div class="event">
+                <h3>Event #3</h3>
+                <p>
+                    <strong>CLASSIFIED</strong><br>
+                    Event specifications pending Council approval.
+                </p>
+            </div>
+
+            <div class="event">
+                <h3>Event #4</h3>
+                <p>
+                    <strong>CLASSIFIED</strong><br>
+                    Further information will be released when deemed
+                    appropriate by the BEEF Council.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BEEF COUNCIL -->
+
+    <section id="council">
+
+        <div class="section-label">
+            Governing Body
+        </div>
+
+        <h2>The BEEF Council</h2>
+
+        <p class="intro">
+            The BEEF Council is the governing body responsible for the
+            planning, administration, culinary operations, media
+            production, competitive integrity, and continued advancement
+            of the BEEF Summit.
+        </p>
+
+        <div class="council">
+
+            <div class="council-member">
+                <h3>Vince</h3>
+                <div class="title">Host · Culinary Operations</div>
+                <p>
+                    Host of the BEEF Summit, culinary operations,
+                    trophy production, prizes, and participant provisions.
+                </p>
+            </div>
+
+            <div class="council-member">
+                <h3>Henry</h3>
+                <div class="title">BEEF Development</div>
+                <p>
+                    Early adopter of BEEF and contributor to prizes,
+                    event development, and general BEEF operations.
+                </p>
+            </div>
+
+            <div class="council-member">
+                <h3>Charlie</h3>
+                <div class="title">Media & Communications</div>
+                <p>
+                    Responsible for the official announcement video,
+                    media production, charms, and selected prizes.
+                </p>
+            </div>
+
+            <div class="council-member">
+                <h3>Reid</h3>
+                <div class="title">Council Intern</div>
+                <p>
+                    The newest member of the BEEF Council. Duties and
+                    responsibilities remain under review.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HISTORY -->
+
+    <section id="history">
+
+        <div class="section-label">
+            BEEF Archives
+        </div>
+
+        <h2>The Origin of BEEF</h2>
+
+        <p class="intro">
+            Before there was BEEF Con, there was simply BEEF.
+        </p>
+
+        <p class="intro">
+            In the early days of Call of Duty: Black Ops, a four-letter
+            clan tag appeared in front of a gamertag simply because it
+            looked funny.
+        </p>
+
+        <p class="intro">
+            There was no secret acronym. No elaborate meaning.
+            No ancient gaming tradition.
+        </p>
+
+        <p class="intro">
+            And yet, the tag stuck.
+        </p>
+
+        <p class="intro">
+            Over time, BEEF became a symbol of a group of gamers who
+            could come together across different games and compete as
+            a squad.
+        </p>
+
+        <p class="intro">
+            Eventually, the clan tag became a tradition.
+        </p>
+
+        <p class="intro">
+            And then, inevitably, it became a convention.
+        </p>
+
+        <p class="intro">
+            <strong>There is no meaning behind BEEF.</strong>
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2>BEEF CON 2027</h2>
+
+        <p>
+            BEEF SQUAD · THE ANNUAL BEEF SUMMIT
+        </p>
+
+        <p>
+            Officially sanctioned by the BEEF Council.
+        </p>
+
+    </footer>
+
+</body>
+</html>
