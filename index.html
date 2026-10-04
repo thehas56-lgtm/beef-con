@@ -439,6 +439,206 @@
         }
 
         /* =========================
+           2027 EVENT DETAILS
+        ========================= */
+
+        .date-banner {
+            margin-top: 45px;
+            display: inline-flex;
+            flex-direction: column;
+            gap: 3px;
+            background: var(--cream);
+            color: var(--beef-brown);
+            border-left: 8px solid var(--beef-red);
+            padding: 14px 20px;
+        }
+
+        .date-banner strong {
+            font-family: 'Anton', sans-serif;
+            font-size: 2rem;
+            line-height: 1;
+            color: var(--beef-red);
+        }
+
+        .date-banner span {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .video-section {
+            background: #100b0a;
+        }
+
+        .video-placeholder {
+            margin-top: 50px;
+            min-height: 420px;
+            border: 4px solid var(--beef-red);
+            background: repeating-linear-gradient(135deg, #211513 0, #211513 12px, #281817 12px, #281817 24px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .video-placeholder-inner {
+            max-width: 600px;
+        }
+
+        .video-placeholder h3 {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 0.95;
+            color: var(--light-cream);
+            text-transform: uppercase;
+        }
+
+        .video-placeholder p {
+            margin-top: 18px;
+            color: #d6c8ad;
+        }
+
+        .competition-section-intro {
+            max-width: 760px;
+        }
+
+        .competition-subsection {
+            margin-top: 70px;
+        }
+
+        .subsection-heading {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 20px;
+            border-bottom: 3px solid rgba(242,229,201,0.2);
+            padding-bottom: 12px;
+        }
+
+        .subsection-heading h3 {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(2.3rem, 5vw, 4rem);
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .subsection-heading span {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--marble);
+            text-align: right;
+        }
+
+        .event-card p {
+            color: #5d4a43;
+        }
+
+        .event-card .coming-soon {
+            margin-top: 18px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--beef-red);
+        }
+
+        .mini-card {
+            min-height: 150px;
+        }
+
+        .provided-badge {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 4px 8px;
+            border: 2px solid var(--beef-red);
+            color: var(--beef-red);
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .game-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 35px;
+        }
+
+        .game-tag {
+            background: var(--cream);
+            color: var(--beef-brown);
+            padding: 9px 13px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            border: 2px solid var(--black);
+            box-shadow: 3px 3px 0 var(--black);
+        }
+
+        .mystery-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 45px;
+            margin-top: 55px;
+            align-items: start;
+        }
+
+        .mystery-copy p {
+            color: #d6c8ad;
+            margin-bottom: 20px;
+        }
+
+        .mystery-note {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--light-cream);
+        }
+
+        .rule-board {
+            background: var(--cream);
+            color: var(--beef-brown);
+            border: 4px solid var(--black);
+            box-shadow: 9px 9px 0 var(--black);
+        }
+
+        .rule-row {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 20px;
+            padding: 18px 20px;
+            border-bottom: 1px solid rgba(33,21,19,0.2);
+        }
+
+        .rule-row:last-child {
+            border-bottom: none;
+        }
+
+        .rule-row strong {
+            font-family: 'Barlow Condensed', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .rule-row span {
+            font-weight: 600;
+        }
+
+        .locked {
+            color: var(--beef-red);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        /* =========================
            COUNCIL
         ========================= */
 
@@ -699,8 +899,9 @@
             <ul>
                 <li><a href="#event">The Event</a></li>
                 <li><a href="#competition">Competition</a></li>
+                <li><a href="#mystery">Mystery Meat</a></li>
                 <li><a href="#council">Council</a></li>
-                <li><a href="#history">History</a></li>
+                <li><a href="#fund">Fund BEEF</a></li>
             </ul>
 
         </div>
@@ -731,9 +932,14 @@
                 </div>
 
                 <div class="hero-meta">
-                    <div>January 2027</div>
+                    <div>January 22–24, 2027</div>
                     <div>Camas, Washington</div>
-                    <div>Date Classified</div>
+                    <div>Three Days</div>
+                </div>
+
+                <div class="date-banner">
+                    <span>Official BEEF Con 2027 Dates</span>
+                    <strong>FRI, JAN 22 → SUN, JAN 24</strong>
                 </div>
 
             </div>
@@ -847,97 +1053,194 @@
 
 
     <!-- =========================
+         ANNOUNCEMENT VIDEO
+    ========================== -->
+
+    <section class="video-section">
+        <div class="container">
+            <div class="eyebrow">Official BEEF Communications</div>
+
+            <h2 class="section-title">The Announcement<br><span class="red-text">Video</span></h2>
+
+            <p class="section-intro">
+                The official BEEF CON 2027 announcement has been authorized for
+                public viewing. Give it a watch and get HYPED for BEEF CON 2027.
+            </p>
+
+            <div class="video-placeholder">
+                <div class="video-placeholder-inner">
+                    <h3>VIDEO<br>COMING SOON</h3>
+                    <p>
+                        The Council is currently preparing the official announcement
+                        video for embedment. This area will be replaced with the video.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================
          COMPETITION
     ========================== -->
 
     <section id="competition" class="section-red">
-
         <div class="container">
 
-            <div class="eyebrow">
-                Nutritional Operations Division
-            </div>
+            <div class="eyebrow">Nutritional Operations Division</div>
 
-            <h2 class="section-title">
-                The<br>
-                <span class="red-text">Competition</span>
-            </h2>
+            <h2 class="section-title">The<br><span class="red-text">Competition</span></h2>
 
-            <p class="section-intro">
-                BEEF personnel will compete across a series of individual and
-                team-based events. Rules, scoring systems, and event selections
-                are subject to Council approval.
+            <p class="section-intro competition-section-intro">
+                BEEF personnel will compete across official main competitions,
+                smaller prize events, and a large collection of casual games.
+                Main competition rules and specific prizes will be published by
+                the Council when finalized.
             </p>
 
-
-            <div class="competition-grid">
-
-                <div class="event-card">
-
-                    <div class="event-number">
-                        Recurring Main Event
-                    </div>
-
-                    <h3>Counter-Strike 2</h3>
-
-                    <p>
-                        Tournament-style team competition.
-                        Multiple squads enter. One squad leaves with the hardware.
-                    </p>
-
+            <div class="competition-subsection">
+                <div class="subsection-heading">
+                    <h3>Main Competitions</h3>
+                    <span>Official Trophy Events</span>
                 </div>
 
-
-                <div class="event-card classified">
-
-                    <div class="event-number">
-                        Event #02
+                <div class="competition-grid">
+                    <div class="event-card">
+                        <div class="event-number">Main Competition #01</div>
+                        <h3>Counter-Strike 2</h3>
+                        <p>Tournament-style team competition. Multiple squads enter. One squad leaves with the hardware.</p>
+                        <div class="coming-soon">Rules &amp; Prize — Coming Soon</div>
                     </div>
 
-                    <h3>Classified</h3>
-
-                    <span class="classified-text">
-                        Council Pending
-                    </span>
-
-                </div>
-
-
-                <div class="event-card classified">
-
-                    <div class="event-number">
-                        Event #03
+                    <div class="event-card">
+                        <div class="event-number">Main Competition #02</div>
+                        <h3>Gamble With Your Friends</h3>
+                        <p>Official BEEF competition event. Format and scoring details pending Council publication.</p>
+                        <div class="coming-soon">Rules &amp; Prize — Coming Soon</div>
                     </div>
 
-                    <h3>Classified</h3>
-
-                    <span class="classified-text">
-                        Council Pending
-                    </span>
-
-                </div>
-
-
-                <div class="event-card classified">
-
-                    <div class="event-number">
-                        Event #04
+                    <div class="event-card">
+                        <div class="event-number">Main Competition #03</div>
+                        <h3>Machine Party</h3>
+                        <p>Official BEEF competition event. Format and scoring details pending Council publication.</p>
+                        <div class="coming-soon">Rules &amp; Prize — Coming Soon</div>
                     </div>
 
-                    <h3>Classified</h3>
-
-                    <span class="classified-text">
-                        Council Pending
-                    </span>
-
+                    <div class="event-card">
+                        <div class="event-number">Main Competition #04</div>
+                        <h3>Meccha Chameleon</h3>
+                        <p>Official BEEF competition event. Format and scoring details pending Council publication.</p>
+                        <div class="coming-soon">Rules &amp; Prize — Coming Soon</div>
+                    </div>
                 </div>
 
+                <p class="section-intro" style="margin-top: 28px;">
+                    <strong>Prize Protocol:</strong> Winners of each main competition receive an official BEEF CON trophy.
+                </p>
+            </div>
+
+            <div class="competition-subsection">
+                <div class="subsection-heading">
+                    <h3>Mini Competitions</h3>
+                    <span>Small Prize Events</span>
+                </div>
+
+                <div class="competition-grid">
+                    <div class="event-card mini-card"><div class="event-number">Mini Competition #01</div><h3>PBA Pro Bowling</h3><p>No trophy. Small prize. Temporary bowling supremacy.</p></div>
+                    <div class="event-card mini-card"><div class="event-number">Mini Competition #02</div><h3>Assetto Corsa</h3><p>No trophy. Small prize. Motorsport-related BEEF.</p><span class="provided-badge">Provided — No Purchase Needed</span></div>
+                    <div class="event-card mini-card"><div class="event-number">Mini Competition #03</div><h3>Beat Saber</h3><p>No trophy. Small prize. Rhythm-based competitive activity.</p><span class="provided-badge">Provided — No Purchase Needed</span></div>
+                    <div class="event-card mini-card"><div class="event-number">Mini Competition #04</div><h3>Super Battle Golf</h3><p>No trophy. Small prize. Golf, but considerably less professional.</p></div>
+                    <div class="event-card mini-card"><div class="event-number">Mini Competition #05</div><h3>Ready or Not</h3><p>No trophy. Small prize. Tactical BEEF operations.</p></div>
+                </div>
+            </div>
+
+            <div class="competition-subsection">
+                <div class="subsection-heading">
+                    <h3>Casual Games</h3>
+                    <span>No Brackets. No Pressure.</span>
+                </div>
+
+                <p class="section-intro">
+                    These games may be fired up throughout the weekend for fun between
+                    official events. If you don't own a game you'd like to play,
+                    consider grabbing it before the event so you can hop in.
+                </p>
+
+                <div class="game-cloud">
+                    <span class="game-tag">PUBG Custom Games</span>
+                    <span class="game-tag">Peak</span>
+                    <span class="game-tag">Backrooms: Apprehension</span>
+                    <span class="game-tag">Sledding with Friends</span>
+                    <span class="game-tag">Bogos Binted?</span>
+                    <span class="game-tag">Mage Arena</span>
+                    <span class="game-tag">Keep Gambling</span>
+                    <span class="game-tag">RV There Yet?</span>
+                    <span class="game-tag">Repeater</span>
+                    <span class="game-tag">9 Ball Roulette</span>
+                    <span class="game-tag">Bean Battles</span>
+                    <span class="game-tag">Outlast Trials</span>
+                    <span class="game-tag">Wreckfest</span>
+                    <span class="game-tag">Counter-Strike 2: Rush</span>
+                    <span class="game-tag">Pratfall</span>
+                    <span class="game-tag">GeoGuessr</span>
+                    <span class="game-tag">Oh Deer</span>
+                    <span class="game-tag">Grain Rot</span>
+                    <span class="game-tag">Modded Lethal Company</span>
+                    <span class="game-tag">Modded R.E.P.O.</span>
+                    <span class="game-tag">Kletka</span>
+                    <span class="game-tag">Yap Yap</span>
+                    <span class="game-tag">Mimesis</span>
+                    <span class="game-tag">Pilgrim</span>
+                    <span class="game-tag">Cheese Rolling</span>
+                    <span class="game-tag">Chained Together</span>
+                    <span class="game-tag">Vegas Infinite</span>
+                    <span class="game-tag">Teardown</span>
+                </div>
             </div>
 
         </div>
-
     </section>
 
+    <!-- =========================
+         MYSTERY MEAT EXCHANGE
+    ========================== -->
+
+    <section id="mystery" class="section-dark">
+        <div class="container">
+            <div class="eyebrow">Social &amp; Recreational Operations</div>
+
+            <h2 class="section-title">The Mystery<br><span class="red-text">Meat Exchange™</span></h2>
+
+            <p class="section-intro">
+                The gift exchange returns for 2027. Known as "White Elephant" by
+                uneducated non-Beefers. Participation is optional, but gift-related
+                chaos is strongly encouraged.
+            </p>
+
+            <div class="mystery-grid">
+                <div class="mystery-copy">
+                    <p>
+                        Everyone brings a wrapped gift. We go around the circle. Each
+                        person either picks a random package to open or steals an already
+                        opened gift. A gift that has been stolen twice is locked and can
+                        no longer be stolen.
+                    </p>
+                    <p class="mystery-note">
+                        Bring something funny. Bring something weird. Bring something
+                        that another BEEFer might actually want. But above all, conceal it.
+                    </p>
+                </div>
+
+                <div class="rule-board">
+                    <div class="rule-row"><strong>Budget</strong><span>Under $20</span></div>
+                    <div class="rule-row"><strong>Theme</strong><span>Loosely gaming-related</span></div>
+                    <div class="rule-row"><strong>Wrap It</strong><span>Gifts must be concealed. No peeking.</span></div>
+                    <div class="rule-row"><strong>Participation</strong><span>Optional</span></div>
+                    <div class="rule-row"><strong>Steal Limit</strong><span>2 steals on a single gift = <span class="locked">Locked</span></span></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- =========================
          COUNCIL
@@ -1107,7 +1410,7 @@
                 </div>
 
                 <div class="status-row">
-                    <div class="status-item">Event Month</div>
+                    <div class="status-item">Event Dates — Jan 22–24, 2027</div>
                     <div class="status-tag confirmed">Confirmed</div>
                 </div>
 
@@ -1117,13 +1420,28 @@
                 </div>
 
                 <div class="status-row">
-                    <div class="status-item">Counter-Strike 2</div>
-                    <div class="status-tag confirmed">Recurring Event</div>
+                    <div class="status-item">Main Competitions — 4</div>
+                    <div class="status-tag confirmed">Confirmed</div>
                 </div>
 
                 <div class="status-row">
-                    <div class="status-item">Additional Main Events</div>
-                    <div class="status-tag pending">Pending</div>
+                    <div class="status-item">Main Competition Rules &amp; Prizes</div>
+                    <div class="status-tag pending">In Development</div>
+                </div>
+
+                <div class="status-row">
+                    <div class="status-item">Mini Competitions — 5</div>
+                    <div class="status-tag confirmed">Confirmed</div>
+                </div>
+
+                <div class="status-row">
+                    <div class="status-item">Casual Game Library</div>
+                    <div class="status-tag confirmed">Published</div>
+                </div>
+
+                <div class="status-row">
+                    <div class="status-item">Mystery Meat Exchange™</div>
+                    <div class="status-tag confirmed">Returning</div>
                 </div>
 
                 <div class="status-row">
@@ -1143,7 +1461,7 @@
 
                 <div class="status-row">
                     <div class="status-item">Announcement Video</div>
-                    <div class="status-tag pending">In Development</div>
+                    <div class="status-tag pending">Awaiting Embed</div>
                 </div>
 
             </div>
@@ -1221,7 +1539,7 @@
                 Official BEEF Con 2027 website.
                 All event information is subject to Council approval.
                 BEEF Con is not responsible for lost ranking points,
-                damaged keyboards, or disputes arising from Secret Santa.
+                damaged keyboards, or disputes arising from the Mystery Meat Exchange™.
             </p>
 
         </div>
